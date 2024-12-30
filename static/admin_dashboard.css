@@ -1,0 +1,146 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    width: 100vw;
+    background-size: cover;
+    background-color:rgba(0, 0, 0, 0.372);
+    background-image: linear-gradient(50deg,#010000,transparent);
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Navbar Styles */
+.n {
+    background-color: rgba(0, 0, 0, 0.7);
+    
+   width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-content: space-between;
+    height: 50px;
+}
+
+.navbar-brand {
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+.navbar-brand:hover {
+    color: #ff8000;
+}
+
+.nav-item a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.nav-item a:hover {
+    color: orange;
+}
+
+.navbar-toggler {
+    background-color: #fff;
+}
+
+/* Heading Styles */
+h1, h2 {
+    text-align: center;
+    margin-top: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 3rem;
+    color: #ff8000;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* List Styles */
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+ul li {
+    margin: 1rem ;
+}
+
+ul li a,#e {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+ul li a:hover {
+    background-color: #ff8000;
+    color: #000;
+}
+
+/* Button Styles */
+button {
+    background-color: #ff8000;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #fff;
+    color: #ff8000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    ul li a {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}
+.con{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+}
+
+.out{
+
+}
+#m{
+    margin-left: 999px;
+    padding-top: 10px;
+    text-decoration: none;
+    color: white;
+    border: #000;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add dealer</title>
+    <link rel="stylesheet" href="/static/add_dealer.css">
+</head>
+<body>
+    <h1>Add New Dealer</h1>
+    <form action="{{ url_for('add_dealer') }}" method="POST">
+        <label for="id">Dealer ID:</label>
+        <input type="text" id="id" name="id" required>
+        <br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="contact">Contact:</label>
+        <input type="text" id="contact" name="contact" required>
+        <br>
+        <button type="submit">Add Dealer</button>
+    
+</body>
+</html>

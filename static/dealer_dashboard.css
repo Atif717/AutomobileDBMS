@@ -1,0 +1,133 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    width: 100vw;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.372);
+    background-image: linear-gradient(50deg, #010000, transparent);
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ff8000;
+}
+
+/* Heading Styles */
+h1, h2 {
+    text-align: center;
+    margin-top: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 3rem;
+    color: #ff8000;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* List Styles */
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+ul li {
+    margin: 1rem 0;
+}
+
+ul li a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #ff8000;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+ul li a:hover {
+    background-color: #ff8000;
+    color: #000;
+}
+
+/* Logout Button */
+a[href="{{ url_for('index') }}"] {
+    display: inline-block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #ff8000;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+a[href="{{ url_for('index') }}"]:hover {
+    background-color: #fff;
+    color: #ff8000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    ul li a {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}
+.div{
+    display: flex;
+    align-content: center;
+    width: 1000px;
+}
+#m{
+    margin-left: 50vw;
+    margin-top: 50px;
+    text-decoration: none;
+    color: black;
+    padding: 1rem;
+    font-size: x-large;
+    height: 10px;
+    
+}

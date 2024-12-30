@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add service</title>
+    <link rel="stylesheet" href="/static/add_service.css">
+</head>
+<body>
+    <h1>Add Service</h1>
+    <form action="{{ url_for('add_service') }}" method="POST">
+        <label for="vin">VIN:</label>
+        <input type="text" id="vin" name="vin" required><br>
+    
+        <label for="customer_id">Customer ID:</label>
+        <input type="text" id="customer_id" name="customer_id" required><br>
+    
+        <label for="service_id">Service ID:</label>
+        <input type="text" id="service_id" name="service_id" required><br>
+    
+        <label for="service_date">Service Date:</label>
+        <input type="date" id="service_date" name="service_date" required><br>
+    
+        <label for="service_detail">Service Detail:</label>
+        <input type="text" id="service_detail" name="service_detail" required><br>
+    
+        <button type="submit">Add Service</button>
+    </form>
+    
+    
+</body>
+</html>

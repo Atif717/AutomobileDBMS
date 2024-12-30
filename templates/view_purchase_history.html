@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Purchase History</title>
+    <link rel="stylesheet" href="/static/view_purchase_history.css">
+</head>
+<body>
+    <h1>Your Purchase History</h1>
+    {% if purchases %}
+    <table border="1">
+        <thead>
+            <tr>
+                <th>VIN</th>
+                
+                <th>Price</th>
+                <th>Purchase Date</th>
+                <th>Payment Method</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for purchase in purchases %}
+                <tr>
+                    <td>{{ purchase.vin }}</td>
+                    
+                    <td>{{ purchase.price_sold }}</td>
+                    <td>{{ purchase.purchase_date }}</td>
+                    <td>{{ purchase.payment_method }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p>No purchases found for this customer ID.</p>
+    {% endif %}
+</body>
+</html>

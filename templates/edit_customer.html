@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Customer</title>
+    <link rel="stylesheet" href="/static/edit_customer.css">
+</head>
+<body>
+    <h1>Edit Customer</h1>
+    <form action="{{ url_for('edit_customer', id=customer.id) }}" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ customer.name }}" required>
+        <br>
+        <label for="street">Street:</label>
+        <input type="text" id="street" name="street" value="{{ customer.street }}" required>
+        <br>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" value="{{ customer.city }}" required>
+        <br>
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" value="{{ customer.state }}" required>
+        <br>
+        <label for="zip_code">Zip Code:</label>
+        <input type="text" id="zip_code" name="zip_code" value="{{ customer.zip_code }}" required>
+        <br>
+        <button type="submit">Update Customer</button>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Employees</title>
+    <link rel="stylesheet" href="/static/view_employees.css">
+</head>
+<body>
+    <h1>Employees List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Dealer ID</th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Salary</th>
+                <th>Contact</th>
+                <th>Supervisor</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+                <tr>
+                    <td>{{ employee.id }}</td>
+                    <td>{{ employee.dealer_id }}</td>
+                    <td>{{ employee.name }}</td>
+                    <td>{{ employee.position }}</td>
+                    <td>{{ employee.salary }}</td>
+                    <td>{{ employee.contact }}</td>
+                    <td>{{ employee.supervisor.name if employee.supervisor else 'None' }}</td>
+                    <td>
+                        <a href="{{ url_for('edit_employee', id=employee.id) }}">Edit</a>
+                        <a href="{{ url_for('delete_employee', id=employee.id) }}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="{{ url_for('add_employee') }}">Add New Employee</a>
+    
+</body>
+</html>

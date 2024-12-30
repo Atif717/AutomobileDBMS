@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/admin_dashboard.css">
+
+    <title>Admin Dashboard</title>
+</head>
+
+<body>
+   
+   <div class="out">
+    <nav class="n">
+        <a class="logp" href="#" style="margin-top: -30px;"><img src="/static/logo.png" width="120"  class="navbar-brand "
+            alt="logo" style="position: fixed; left: 2vw;" id="log" ></img></a>
+        
+        <a href="{{ url_for('index') }}" id="m">Logout</a>
+    </nav>
+   </div>
+    <h1>Welcome, Admin!</h1>
+
+    <h2>Manage Database</h2>
+    
+    <div class="con">
+
+        
+            <ul>
+                <li><a href="/vehicles">View/Manage Vehicles</a></li>
+                <li><a href="/dealers">View/Manage Dealers</a></li>
+                <li><a href="/customers">View/Manage Customers</a></li>
+            </ul>
+            <ul>
+                <li><a href="/sales">View/Manage Sales</a></li>
+                <li><a href="/employees">View/Manage Employees</a></li>
+                <li><a href="/services">View/Manage Services</a></li>
+            </ul>
+        
+       
+    </div>
+
+</body>
+
+</html>

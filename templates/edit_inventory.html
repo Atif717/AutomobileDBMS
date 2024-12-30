@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Inventory</title>
+    <link rel="stylesheet" href="/static/edit_inventory.css">
+</head>
+<body>
+    <h1>Edit Inventory: {{ inventory_item.vin }}</h1>
+    <form method="POST">
+        <label for="stock_quantity">Stock Quantity:</label>
+        <input type="number" id="stock_quantity" name="stock_quantity" value="{{ inventory_item.stock_quantity }}" required>
+        <br>
+        <label for="price_offered">Price Offered:</label>
+        <input type="number" step="0.01" id="price_offered" name="price_offered" value="{{ inventory_item.price_offered }}" required>
+        <br>
+        <button type="submit">Save Changes</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Customers</title>
+    <link rel="stylesheet" href="/static/view_customers.css">
+</head>
+<body>
+    <h1>View/Manage Customers</h1>
+    <a href="{{ url_for('add_customer') }}">Add New Customer</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Customer ID</th>
+                <th>Name</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip Code</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for customer in customers %}
+            <tr>
+                <td>{{ customer.id }}</td>
+                <td>{{ customer.name }}</td>
+                <td>{{ customer.street }}</td>
+                <td>{{ customer.city }}</td>
+                <td>{{ customer.state }}</td>
+                <td>{{ customer.zip_code }}</td>
+                <td>
+                    <a href="{{ url_for('edit_customer', id=customer.id) }}">Edit</a>
+                    <form action="{{ url_for('delete_customer', id=customer.id) }}" method="POST" style="display:inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

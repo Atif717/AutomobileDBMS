@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sales List</title>
+    <link rel="stylesheet" href="/static/view_sales.css">
+</head>
+<body>
+    <h1>Sales List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>VIN</th>
+                <th>Customer ID</th>
+                <th>Price Sold</th>
+                <th>Payment Method</th>
+                <th>Warranty Period</th>
+                <th>Purchase Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sale in sales %}
+                <tr>
+                    <td>{{ sale.vin }}</td>
+                    <td>{{ sale.customer_id }}</td>
+                    <td>{{ sale.price_sold }}</td>
+                    <td>{{ sale.payment_method }}</td>
+                    <td>{{ sale.warranty_period }}</td>
+                    <td>{{ sale.purchase_date }}</td>
+                    <td>
+                        <a href="{{ url_for('edit_sale', vin=sale.vin, customer_id=sale.customer_id) }}">Edit</a>
+                        <a href="{{ url_for('delete_sale', vin=sale.vin, customer_id=sale.customer_id) }}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="{{ url_for('add_sale') }}">Add New Sale</a>
+
+
+    
+</body>
+</html>

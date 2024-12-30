@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Employee</title>
+    <link rel="stylesheet" href="/static/edit_employee.css">
+</head>
+<body>
+    
+    <h1>Edit Employee</h1>
+
+    <form action="{{ url_for('edit_employee', employee_id=employee.id) }}" method="POST">
+        <label for="dealer_id">Dealer:</label>
+        <select id="dealer_id" name="dealer_id" required>
+            {% for dealer in dealers %}
+                <option value="{{ dealer.id }}" {% if dealer.id == employee.dealer_id %} selected {% endif %}>{{ dealer.name }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ employee.name }}" required>
+        <br>
+
+        <label for="position">Position:</label>
+        <input type="text" id="position" name="position" value="{{ employee.position }}" required>
+        <br>
+
+        <label for="salary">Salary:</label>
+        <input type="number" id="salary" name="salary" value="{{ employee.salary }}" required>
+        <br>
+
+        <label for="contact">Contact:</label>
+        <input type="text" id="contact" name="contact" value="{{ employee.contact }}" required>
+        <br>
+
+        <label for="supervisor_id">Supervisor:</label>
+        <select id="supervisor_id" name="supervisor_id">
+            <option value="">None</option>
+            {% for supervisor in employees %}
+                <option value="{{ supervisor.id }}" {% if supervisor.id == employee.supervisor_id %} selected {% endif %}>{{ supervisor.name }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <button type="submit">Update Employee</button>
+    </form>
+</body>
+</html>

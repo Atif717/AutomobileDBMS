@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: rgba(20, 20, 20, 0.9);
+    color: #ffffff;
+}
+
+h1 {
+    text-align: center;
+    color: #ff8000;
+    background-color: #332222;
+    padding: 10px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1a1a1a;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #555555;
+    color: #ff8000;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ff5500;
+    border-radius: 16px;
+}
+
+th, td {
+    border-radius: 0; /* Making the table headers and data cells rectangular */
+}
+
+tr:nth-child(even) {
+    background-color: #1a1a1a;
+}
+
+tr:hover td {
+    background-color: #332222;
+}
+
+thead:hover {
+    background-color: #555555;
+}
+
+a {
+    text-decoration: none;
+    color: #ff8000;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    border-radius: 16px;
+}
+
+a:hover {
+    background-color: #ff5500;
+    color: #ffffff;
+    border-color: #ff5500;
+}
+
+a[href="{{ url_for('add_sale') }}"] {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 10px 15px;
+    background-color: #ff8000;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 16px;
+}
+
+a[href="{{ url_for('add_sale') }}"]:hover {
+    background-color: #ff5500;
+}
+
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}

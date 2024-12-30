@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Service</title>
+    <link rel="stylesheet" href="/static/edit_service.css">
+</head>
+<body>
+    <h1>Edit Service</h1>
+    <form action="{{ url_for('edit_service', vin=service.vin, customer_id=service.customer_id, service_id=service.service_id) }}" method="POST">
+        <label for="service_date">Service Date:</label>
+        <input type="date" id="service_date" name="service_date" value="{{ service.service_date }}" required><br>
+
+        <label for="service_detail">Service Detail:</label>
+        <input type="text" id="service_detail" name="service_detail" value="{{ service.service_detail }}" required><br>
+
+        <button type="submit">Update Service</button>
+    </form>
+    <br>
+    <a href="{{ url_for('view_services') }}">Back to Services</a>
+</body>
+</html>

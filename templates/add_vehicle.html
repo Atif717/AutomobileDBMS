@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Vehicle</title>
+    <link rel="stylesheet" href="/static/add_vehicle.css">
+</head>
+<body>
+    <h1>Add New Vehicle</h1>
+<form method="post">
+    <label for="vin">VIN:</label><input type="text" name="vin" title="vin" required>
+    <label>Brand:</label>
+    <select name="brand_id" title="brand_id">
+        {% for brand in brands %}
+        <option value="{{ brand.id }}">{{ brand.name }}</option>
+        {% endfor %}
+    </select>
+    <label>Model:</label>
+    <select name="model_id" title="model_id">
+        {% for model in models %}
+        <option value="{{ model.id }}">{{ model.name }}</option>
+        {% endfor %}
+    </select>
+    <label for="price">Price:</label><input type="number" step="0.01" name="price" title="price" required>
+    <label for="color">Color:</label><input type="text" name="color" title="color" required>
+    <label for="year">Year:</label><input type="number" name="year" title="year" required>
+    <button type="submit">Add Vehicle</button>
+</form>
+
+    
+</body>
+</html>

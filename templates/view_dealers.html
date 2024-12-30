@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>view dealers</title>
+    <link rel="stylesheet" href="/static/view_dealers.css">
+</head>
+<body>
+    <h1>View/Manage Dealers</h1>
+    <a href="{{ url_for('add_dealer') }}">Add New Dealer</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Dealer ID</th>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dealer in dealers %}
+            <tr>
+                <td>{{ dealer.id }}</td>
+                <td>{{ dealer.name }}</td>
+                <td>{{ dealer.contact }}</td>
+                <td>
+                    <a href="{{ url_for('edit_dealer', id=dealer.id) }}">Edit</a>
+                    <form action="{{ url_for('delete_dealer', id=dealer.id) }}" method="POST" style="display:inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+</body>
+</html>

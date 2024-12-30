@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/customer_inventory.css">
+    <title>Inventory</title>
+</head>
+<body>
+    <h1>Available Vehicles</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>VIN</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Price Offered</th>
+                <th>Stock Quantity</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for inv, vehicle in inventory %}
+                <tr>
+                    <td>{{ vehicle.vin }}</td>
+                    <td>{{ vehicle.brand_id }}</td>  <!-- Assuming brand_id is stored, modify as needed -->
+                    <td>{{ vehicle.model_id }}</td>  <!-- Assuming model_id is stored, modify as needed -->
+                    <td>{{ inv.price_offered }}</td>
+                    <td>{{ inv.stock_quantity }}</td>
+                    <td>{{ vehicle.year }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

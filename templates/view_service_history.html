@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service History</title>
+    <link rel="stylesheet" href="/static/view_service_history.css">
+</head>
+<body>
+    <h1>Your Service History</h1>
+    {% if services %}
+    <table border="1">
+        <thead>
+            <tr>
+                <th>VIN</th>
+               
+                <th>Service Date</th>
+                <th>Service Detail</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for service in services %}
+                <tr>
+                    <td>{{ service.vin }}</td>
+                    
+                    <td>{{ service.service_date }}</td>
+                    <td>{{ service.service_detail }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p>No service history found for this customer ID.</p>
+    {% endif %}
+    
+</body>
+</html>

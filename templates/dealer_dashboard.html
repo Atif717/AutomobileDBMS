@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dealer Dashboard</title>
+    <link rel="stylesheet" href="/static/dealer_dashboard.css">
+</head>
+<body>
+    <div class="div">
+    <h1 style="padding-left: 3rem;">Welcome, Dealer!</h1>
+    <a href="{{ url_for('index') }}" id="m">Logout</a>
+    </div>
+    <h2>Manage Inventory</h2>
+    <ul>
+        <li><a href="{{ url_for('view_inventory', dealer_id=dealer_id) }}">View/Update Inventory</a></li>
+        
+        <li><a href="/sales">View Sales Records</a></li>
+        <li><a href="/services">View Service Records</a></li>
+    </ul>
+</body>
+</html>
